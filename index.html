@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Babu ❤️🎂</title>
+
+    <!-- Google Fonts for aesthetic romantic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Music Disc Controller -->
+    <button id="floatingMusicBtn" class="floating-music-btn" onclick="toggleMusic()" title="Play / Pause Music">
+        <span id="musicDiscIcon">🎵</span>
+    </button>
+
+    <!-- Canvas for Confetti & Celebration Burst -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Floating Background Hearts -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="container">
+
+        <div class="cake-badge">🎂✨</div>
+
+        <h1 class="main-title">Happy Birthday</h1>
+
+        <h2 class="sub-title">My Dear Babu ❤️</h2>
+
+        <p class="intro-wish">
+            Happy Birthday Supriya(babu)! 🎉<br>
+            May your life always be filled with immense happiness,
+            pure love, good health, and the most beautiful memories.
+        </p>
+
+        <button id="surpriseBtn" class="surprise-btn" onclick="showSurprise()">
+            <span class="btn-icon">🎁</span> Open Your Surprise
+        </button>
+
+        <div id="surprise" class="surprise-box hidden">
+
+            <div class="heart-divider">💖 💕 💖</div>
+
+            <h2 class="surprise-title">For You, Babu ❤️</h2>
+
+            <div class="message-card">
+                <p>
+                    I know ki pehle ki tarah haq nahi hai mujhe,<br>
+                    but mai hamesha pyar karta raha hu<br>
+                    aur hamesha karta rahunga. 🌸
+                </p>
+
+                <p class="shayari-text">
+                    "Chahe waqt kitna bhi badal jaye,<br>
+                    chahe dooriyan kitni bhi aa jayein,<br>
+                    mere dil me aapki jagah koi nahi le sakta... ❤️"
+                </p>
+
+                <div class="personal-heart-note">
+                    <p>
+                        Aap duniya ki aur meri life ki sabse achhi insaan ho,<br>
+                        meri life me aap <strong>Maa ke barabar value</strong> rakhti ho...<br>
+                        aur mera pyar aapke liye kabhi kam nahi hoga. ❤️
+                    </p>
+                    <p>
+                        Apne face par hamesha smile rakhna aap, aur hamesha khush rakhna khud ko.<br>
+                        Apni tabiyat par dhyan dena aur please khana hamesha time se khana. 🌸
+                    </p>
+                    <p>
+                        Aapko har khushi mile, kabhi koi gham na ho,<br>
+                        life me kabhi aapki aankhon me aansu na aayein. 🥺<br>
+                        Apna bohot khayal rakhna...
+                    </p>
+                    <p>
+                        Aapki life se, aur bohot doston aur mere saare pehchane logon se door jaane wala hu...<br>
+                        Bas apna khayal rakhna.<br>
+                        Last time ek baar aapko dekhna chahta hu, aapko gale lagana chahta hu. 🫂💔
+                    </p>
+                </div>
+
+                <p class="blessing-text">
+                    Aap hamesha muskurati raho aur khush raho.<br>
+                    Bhagwan aapko duniya ki har khushi aur sukoon de! 🙏✨
+                </p>
+            </div>
+
+            <!-- Beautiful Photo Memories Slider -->
+            <div class="memories-section">
+                <h3 class="memories-title">📸 Beautiful Memories With You</h3>
+                <div class="slider-container">
+                    <button class="slide-btn prev-btn" onclick="prevSlide()">❮</button>
+                    <div class="slides-wrapper">
+                        <div class="memory-slide active">
+                            <img src="photos/Screenshot_20261109_101514_Gallery.jpg" alt="Memory 1">
+                        </div>
+                        <div class="memory-slide">
+                            <img src="photos/Screenshot_20261109_101521_Gallery.jpg" alt="Memory 2">
+                        </div>
+                        <div class="memory-slide">
+                            <img src="photos/Screenshot_20261109_101530_Gallery.jpg" alt="Memory 3">
+                        </div>
+                        <div class="memory-slide">
+                            <img src="photos/Screenshot_20261109_101535_Gallery.jpg" alt="Memory 4">
+                        </div>
+                        <div class="memory-slide">
+                            <img src="photos/Screenshot_20261109_101542_Gallery.jpg" alt="Memory 5">
+                        </div>
+                        <div class="memory-slide">
+                            <img src="photos/Screenshot_20261109_101548_Gallery.jpg" alt="Memory 6">
+                        </div>
+                        <div class="memory-slide">
+                            <img src="photos/Screenshot_20261109_101601_Gallery.jpg" alt="Memory 7">
+                        </div>
+                    </div>
+                    <button class="slide-btn next-btn" onclick="nextSlide()">❯</button>
+                </div>
+                <div class="active-caption" id="activeCaption">My Favorite Smile ❤️</div>
+                <div class="slide-dots" id="slideDots"></div>
+            </div>
+
+            <div class="final-farewell-sign">
+                <h3 class="closing-love">Love You Forever 🥹❤️</h3>
+                <p class="sign-tag">— Bye... Your Bacha 🕊️</p>
+            </div>
+
+        </div>
+
+        <div class="music-player">
+            <div class="music-header">
+                <span class="music-icon-anim">🎵</span>
+                <h3>A Song For You, Babu</h3>
+            </div>
+
+            <audio id="birthdayAudio" controls loop>
+                <source src="music/birthday-song.wav" type="audio/wav">
+                <source src="music/birthday song.mp3" type="audio/mpeg">
+                <source src="music/birthday song.m4a" type="audio/mp4">
+                <source src="music/birthday-song.m4a" type="audio/mp4">
+                Your browser does not support the audio element.
+            </audio>
+
+            <p class="music-subtext">Click surprise to play automatically 🎶</p>
+        </div>
+
+    </div>
+
+    <!-- Sweet celebration modal message -->
+    <div id="customModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-emoji">🎉🎂❤️</div>
+            <h3>Happy Birthday My Love (Babu)!</h3>
+            <p>You are truly special. Wishing you the happiest birthday ever! 🥳</p>
+            <button class="modal-close-btn" onclick="closeModal()">Thank You ❤️</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
